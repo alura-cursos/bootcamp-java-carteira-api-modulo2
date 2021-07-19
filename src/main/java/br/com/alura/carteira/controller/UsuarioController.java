@@ -11,24 +11,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.alura.carteira.dto.TransacaoDto;
-import br.com.alura.carteira.dto.TransacaoFormDto;
-import br.com.alura.carteira.service.TransacaoService;
+import br.com.alura.carteira.dto.UsuarioDto;
+import br.com.alura.carteira.dto.UsuarioFormDto;
+import br.com.alura.carteira.service.UsuarioService;
 
 @RestController
-@RequestMapping("/transacoes")
-public class TransacaoController {
+@RequestMapping("/usuarios")
+public class UsuarioController {
 
 	@Autowired
-	private TransacaoService service;
+	private UsuarioService service;
 
 	@GetMapping
-	public List<TransacaoDto> listar() {
+	public List<UsuarioDto> listar() {
 		return service.listar();
 	}
 
 	@PostMapping
-	public void cadastrar(@RequestBody @Valid TransacaoFormDto dto) {
+	public void cadastrar(@RequestBody @Valid UsuarioFormDto dto) {
 		service.cadastrar(dto);
 	}
 
